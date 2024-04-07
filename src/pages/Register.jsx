@@ -24,8 +24,6 @@ const Register = () => {
             .catch(error => {
                 console.error(error)
             })
-
-
     }
 
     return (
@@ -40,26 +38,20 @@ const Register = () => {
                         <div className="form-control">
                             <input type="text" name="name" placeholder="Name" className="input input-bordered" />
                         </div>
-
                         <div className="form-control">
                             <input type="text" name="photo" placeholder="Photo" className="input input-bordered" />
                         </div>
-
                         <div className="form-control">
                             <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
-
                         <div className="form-control">
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-
                         </div>
-
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
                         <p> <Link to='/login' className="text-purple-700">Login</Link></p>
                     </form>
-                  
                 </div>
             </div>
         </div>

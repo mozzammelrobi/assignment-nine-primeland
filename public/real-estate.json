@@ -9,7 +9,7 @@
       "area": "5000 sq ft",
       "location": "Coastal Heights",
       "facilities": ["Swimming Pool", "Gym", "Home Theater"],
-      "image": "villa_ocean_view.jpg"
+      "image": "https://i.ibb.co/Nx9LbmN/house-1836070-1280.jpg"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "area": "1500 sq ft",
       "location": "Downtown District",
       "facilities": ["Balcony", "Fitness Center", "24/7 Security"],
-      "image": "city_apartment.jpg"
+      "image": "https://i.ibb.co/n6ZRpGz/house-409451-1280.jpg"
     },
     {
       "id": 3,
@@ -33,6 +33,42 @@
       "area": "3000 sq ft",
       "location": "Tranquil Meadows",
       "facilities": ["Backyard Garden", "Playroom", "Garage"],
-      "image": "suburban_home.jpg"
+      "image": "https://i.ibb.co/GvXnD5q/house-6799908-1280.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Seaside Cottage Retreat",
+      "segment_name": "Residential",
+      "description": "Charming seaside cottage nestled along the coast, offering a serene retreat from city life.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "Coastal Haven",
+      "facilities": ["Private Beach Access", "Fireplace", "Deck with Ocean Views"],
+      "image": "https://i.ibb.co/Wcpmnr7/new-home-1633889-1280.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Rural Farmhouse Oasis",
+      "segment_name": "Residential",
+      "description": "Rustic farmhouse surrounded by rolling hills and vast farmland, perfect for those seeking a tranquil countryside lifestyle.",
+      "price": "$1,000,000",
+      "status": "sale",
+      "area": "3500 sq ft",
+      "location": "Green Acres",
+      "facilities": ["Barn", "Vegetable Garden", "Pond"],
+      "image": "https://i.ibb.co/xmG6Pkz/new-home-1682323-1280.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Mountain Retreat Chalet",
+      "segment_name": "Residential",
+      "description": "Cozy mountain chalet nestled in the heart of the alpine wilderness, offering breathtaking views and year-round outdoor adventures.",
+      "price": "$900,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Alpine Peaks",
+      "facilities": [ "Hot Tub", "Outdoor Fireplace"],
+      "image": "https://i.ibb.co/QC4tvb7/england-5108120-1280.jpg"
     }
   ]
