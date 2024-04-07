@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Luxury Villa with Ocean View",
+      "segment_name": "Residential",
+      "description": "Beautiful villa overlooking the ocean, perfect for those seeking luxury living.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Coastal Heights",
+      "facilities": ["Swimming Pool", "Gym", "Home Theater"],
+      "image": "villa_ocean_view.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Modern City Apartment",
+      "segment_name": "Residential",
+      "description": "Sleek and stylish apartment in the heart of the city, perfect for urban living.",
+      "price": "$1,200,000",
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "Downtown District",
+      "facilities": ["Balcony", "Fitness Center", "24/7 Security"],
+      "image": "city_apartment.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Family Home in Suburbia",
+      "segment_name": "Residential",
+      "description": "Spacious family home nestled in a quiet suburb, ideal for raising a family.",
+      "price": "$800,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "Tranquil Meadows",
+      "facilities": ["Backyard Garden", "Playroom", "Garage"],
+      "image": "suburban_home.jpg"
+    }
+  ]
