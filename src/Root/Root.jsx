@@ -5,7 +5,7 @@ const Root = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1 className="text-3xl">Root File</h1>
+           
         <Outlet></Outlet>
         </div>
     );
