@@ -1,15 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaGithub } from "react-icons/fa";
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useLocation, useNavigate  } from 'react-router-dom';
 
 
 const Login = () => {
-    const [success, setSucces] = useState('')
     const [error , setError] = useState('')
-    const { loginUser, loginGithub } = useContext(AuthContext)
+    const { loginUser, loginGithub, user } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    console.log(location)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -22,7 +25,7 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 console.log(result.user)
-                setSucces()
+        
                 toast.success('login successfully')
                 
             })
@@ -35,6 +38,12 @@ const Login = () => {
     const handleGithubLogin = () => {
         loginGithub()
     }
+
+    useEffect( () => {
+        if(user){
+            navigate(location.state)
+        }
+    },[user])
 
     return (
         <div className="hero min-h-screen bg-base-200">

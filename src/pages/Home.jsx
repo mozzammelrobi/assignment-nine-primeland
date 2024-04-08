@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import EstateCard from "../components/EstateCard";
+import Services from "../components/Services";
 
 
 const Home = () => {
     const data = useLoaderData()
-    // console.log(data)
 
     return (
         <div>
@@ -26,7 +26,6 @@ const Home = () => {
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
-
             >
                 <SwiperSlide>
                     <div>
@@ -48,10 +47,15 @@ const Home = () => {
                         <img className='w-full h-96' src="https://i.ibb.co/GvXnD5q/house-6799908-1280.jpg" alt="" />
                     </div>
                 </SwiperSlide>
-
             </Swiper>
-            <div className="container mx-auto">
-                <div className="mt-16">
+
+            <div className="container mx-auto mt-16">
+                <Services></Services>
+            </div>
+
+
+            <div className="container mx-auto mt-24">
+                <div>
                     <h1 className="text-3xl text-center font-bold mb-4 " >Fine Your Best <span className="text-purple-700">Property</span></h1>
                     <p className="text-center">Wheather you are an independent real estate agent or a larger brokarage. You wealth is your best assets</p>
                 </div>
