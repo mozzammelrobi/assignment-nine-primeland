@@ -1,12 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 
 const Register = () => {
+    const [error, setError] = useState('')
+    const [showPassword, setShowPassword]  = useState(true)
     const { createUser } = useContext(AuthContext)
-
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -16,10 +20,17 @@ const Register = () => {
         const password = e.target.password.value;
         console.log(name, photo, email, password)
 
+        if(!/(?=.*[a-z])(?=.*[A-Z]).+/.test(password)){
+            setError('password must have lowercase and uppercase alPhabet')
+            return 
+        }
+
         // create user
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
+                toast.success('Register success')
+                
             })
             .catch(error => {
                 console.error(error)
@@ -44,8 +55,18 @@ const Register = () => {
                         <div className="form-control">
                             <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
-                        <div className="form-control">
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                        <div className="form-control relative border-4 ">
+                            <input type={`${showPassword? "password": "text"}`} name="password" placeholder="password" className="input input-bordered" required />
+                            <div 
+                            onClick={()=> setShowPassword(!showPassword)}
+                            className="absolute right-3 top-4">
+                               {
+                                showPassword ?  <FaEye/> : <FaEyeSlash/>
+                               }
+                            </div>
+                        </div>
+                        <div className="text-red-700">
+                            {error}
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>

@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaGithub } from "react-icons/fa";
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
+    const [success, setSucces] = useState('')
+    const [error , setError] = useState('')
     const { loginUser, loginGithub } = useContext(AuthContext)
 
     const handleLogin = (e) => {
@@ -13,13 +17,18 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email, password)
 
+        setError('')
         // login user
         loginUser(email, password)
             .then(result => {
                 console.log(result.user)
+                setSucces()
+                toast.success('login successfully')
+                
             })
             .catch(error => {
                 console.log(error)
+                setError(error.message)
             })
     }
 
@@ -52,6 +61,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-sm btn-primary">Login</button>
                         </div>
+                        {error}
                         <div>
                             <FaGithub
                              onClick={handleGithubLogin} 
