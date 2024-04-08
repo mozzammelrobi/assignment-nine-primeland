@@ -55,13 +55,13 @@ const Register = () => {
                         <div className="form-control">
                             <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
-                        <div className="form-control relative border-4 ">
+                        <div className="form-control relative">
                             <input type={`${showPassword? "password": "text"}`} name="password" placeholder="password" className="input input-bordered" required />
                             <div 
                             onClick={()=> setShowPassword(!showPassword)}
-                            className="absolute right-3 top-4">
+                            className="absolute right-3 top-4 cursor-pointer">
                                {
-                                showPassword ?  <FaEye/> : <FaEyeSlash/>
+                                showPassword ?  <FaEye size={20} /> : <FaEyeSlash size={20}/>
                                }
                             </div>
                         </div>
@@ -69,9 +69,9 @@ const Register = () => {
                             {error}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button className="btn btn-secondary">Register</button>
                         </div>
-                        <p> <Link to='/login' className="text-purple-700">Login</Link></p>
+                        <p> <Link to='/login' className="text-purple-700 text-2xl">Login</Link></p>
                     </form>
                 </div>
             </div>

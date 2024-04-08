@@ -2,13 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaGithub } from "react-icons/fa";
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useLocation, useNavigate  } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-    const [error , setError] = useState('')
+    const [error, setError] = useState('')
     const { loginUser, loginGithub, user } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
@@ -21,13 +21,11 @@ const Login = () => {
         console.log(email, password)
 
         setError('')
-        // login user
+
         loginUser(email, password)
             .then(result => {
                 console.log(result.user)
-        
                 toast.success('login successfully')
-                
             })
             .catch(error => {
                 console.log(error)
@@ -39,18 +37,16 @@ const Login = () => {
         loginGithub()
     }
 
-    useEffect( () => {
-        if(user){
+    useEffect(() => {
+        if (user) {
             navigate(location.state)
         }
-    },[user])
+    }, [user])
 
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content">
-
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-
                     <form
                         onSubmit={handleLogin}
                         className="card-body">
@@ -61,25 +57,25 @@ const Login = () => {
                             <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
-
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-sm btn-primary">Login</button>
-                        </div>
                         {error}
+                        <div className="form-control mt-6">
+                            <button className="btn btn-secondary">Login</button>
+                        </div>
                         <div>
                             <FaGithub
-                             onClick={handleGithubLogin} 
-                            className="cursor-pointer hover:scale-110"
+                                size={30}
+                                onClick={handleGithubLogin}
+                                className="cursor-pointer hover:scale-110"
                             />
                         </div>
-                        <p> <Link className="text-purple-800" to='/register'>Register</Link></p>
+                        <p className="text-center text-2xl">please <Link className="text-purple-800 font-bold" to='/register'>Register</Link></p>
                     </form>
-                  
+
                 </div>
             </div>
         </div>
