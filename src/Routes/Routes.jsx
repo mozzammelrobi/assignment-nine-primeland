@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import CardDetails from "../components/CardDetails";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 loader: () =>fetch('/real-estate.json') ,
-                element:<CardDetails></CardDetails>
+                element:<PrivateRouter><CardDetails></CardDetails></PrivateRouter>
             }
         ]
     }
