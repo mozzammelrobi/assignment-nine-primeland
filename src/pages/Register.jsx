@@ -1,18 +1,17 @@
 import { useContext, useState } from "react";
-// import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form"
-import { Navigate,useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 const Register = () => {
     const [error, setError] = useState('')
     const [showPassword, setShowPassword] = useState(true)
     const navigate = useNavigate();
-    const { user, createUser, updateUserProfile, logOut } = useContext(AuthContext)
+    const {  createUser, updateUserProfile, logOut } = useContext(AuthContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -47,7 +46,6 @@ const Register = () => {
     return (
         <div className="hero  bg-base-200">
             <div className="hero-content">
-                {user && <Navigate to='/profile'></Navigate>}
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form
                         onSubmit={handleSubmit(onSubmit)}
