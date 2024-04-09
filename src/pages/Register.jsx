@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form"
 import { useNavigate, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -45,6 +46,10 @@ const Register = () => {
 
     return (
         <div className="hero  bg-base-200">
+
+            <Helmet>
+                <title>primeLnad | Register</title>
+            </Helmet>
             <div className="hero-content">
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form

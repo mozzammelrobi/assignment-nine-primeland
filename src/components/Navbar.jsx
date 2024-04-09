@@ -41,7 +41,7 @@ const Navbar = () => {
                             <div tabIndex={0} role="button" className=" m-1">
                                 <div className="avatar">
                                     <div className="w-9 rounded-full">
-                                        <img src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" } />
+                                        <img src={user?.photoURL || "https://i.ibb.co/4fhSnF2/27-removebg-preview-1.jpg" } />
                                     </div>
                                 </div>
                             </div>

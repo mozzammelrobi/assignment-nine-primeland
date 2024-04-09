@@ -4,6 +4,7 @@ import "swiper/css";
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import EstateCard from "../components/EstateCard";
 import Services from "../components/Services";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -11,7 +12,9 @@ const Home = () => {
 
     return (
         <div>
-
+            <Helmet>
+                <title>home</title>
+            </Helmet>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
