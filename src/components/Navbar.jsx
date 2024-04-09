@@ -5,16 +5,16 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
-
+// console.log(user)
     const handleLogOut = () => {
         logOut()
     }
 
     const links = <>
         <li><NavLink className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'} to='/'>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'} to='/about'>About</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'} to='/about'>About us</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'} to='/contact'>contact</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'} to='/profile'>profile</NavLink></li>
+{  user && <li><NavLink className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'} to='/profile'>profile</NavLink></li>}
     </>
     return (
         <div className="navbar bg-base-100">
@@ -36,28 +36,23 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user ? <>
-
+                    user?.email ? <>
                         <div className="dropdown dropdown-bottom dropdown-end">
                             <div tabIndex={0} role="button" className=" m-1">
                                 <div className="avatar">
-                                    <div className="w-12 rounded-full">
-                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    <div className="w-9 rounded-full">
+                                        <img src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" } />
                                     </div>
                                 </div>
                             </div>
                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                <li><a>{user?.displayName} </a></li>
                                 <li><button onClick={handleLogOut}>LogOut</button></li>
-                                <li><a>Item 2</a></li>
                             </ul>
                         </div>
-
-
-
                     </>
                         : <Link to='/login' className="btn btn-sm">login</Link>
                 }
-
             </div>
         </div>
     );

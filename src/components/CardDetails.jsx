@@ -6,8 +6,6 @@ const CardDetails = () => {
     const data = useLoaderData()
     const { id } = useParams()
     const detail = data.find(d => d.id == id)
-    console.log(detail)
-
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">

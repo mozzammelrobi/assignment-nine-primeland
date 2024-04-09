@@ -1,6 +1,6 @@
 # PrimeLnad
 - [Live link](https://assignment-nine-e5a2b.web.app/)
-features 
+### features
 - Responsive Navbar 
 - Slider
 - Land Details
