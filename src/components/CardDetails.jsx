@@ -1,6 +1,4 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { MdLocationPin } from "react-icons/md";
-import { IoShapesSharp } from "react-icons/io5";
 
 const CardDetails = () => {
     const data = useLoaderData()
@@ -8,7 +6,8 @@ const CardDetails = () => {
     const detail = data.find(d => d.id == id)
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+  
+         <div className="card bg-base-100 shadow-xl">
             <figure><img src={detail.image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
@@ -17,20 +16,16 @@ const CardDetails = () => {
                 <p>{detail.description}</p>
                 <div className="card-actions mt-5">
                     <div className="font-bold">Price: {detail.price}</div>
-                    <div className="badge badge-outline"> status:{detail.status}</div>
                 </div>
-                <div>
-                    <p className='flex gap-3 items-center'><IoShapesSharp /> Area:{detail.area} </p>
-                    <p className='flex gap-3 items-center'><MdLocationPin /> {detail.location}</p>
-                </div>
-                <div className='flex justify-around mb-5'>
-                    {
-                        detail?.facilities?.map((f, i) => <p key={i} className='font-bold'>{f}</p>)
-                    }
-                </div>
-
+              <div>
+                <h4 className="font-bold mb-3 mt-4">Property Information</h4>
+              <p>consectetur adipisicing elit. Fugit recusandae vero cum, illum blanditiis voluptas sapiente? Repudiandae iusto ea accusamus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptates dolorem beatae quaerat. Optio, eius inventore rem corporis sequi recusandae eveniet temporibus fugit quasi, pariatur veritatis magni consequatur fuga quia. </p>
+              </div>
+                
             </div>
         </div> 
+    
+    
     );
 };
 

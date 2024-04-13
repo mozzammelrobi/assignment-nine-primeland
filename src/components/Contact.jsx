@@ -7,7 +7,21 @@ const Contact = () => {
             <Helmet>
                 <title>contact</title>
             </Helmet>
-            this is contact page Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis distinctio ducimus sit quos, sequi officia perferendis amet nesciunt! Vel illo nisi porro blanditiis dolorum velit saepe ducimus maiores explicabo ipsum illum soluta dicta suscipit quis, maxime quidem autem hic ea sit consectetur sunt, architecto iusto. Aut sit excepturi esse facere earum, repellendus iusto laudantium eligendi id neque, totam fuga reprehenderit ab modi. Saepe, obcaecati, dicta expedita provident blanditiis animi, natus dolores ea alias repudiandae sed neque atque! Animi quia nihil earum quidem rem, iusto odit id esse soluta ut repudiandae asperiores aspernatur nesciunt dolorem inventore ratione aperiam doloremque hic nam.
+
+
+            <div className="flex items-center p-2 gap-5 flex-col sm:flex-row lg:flex-row "> 
+                <div className="w-full sm:w-1/2 lg:w-1/2">
+                    <h3 className="text-5xl font-bold mb-4">Contact with us</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae molestias error optio expedita nihil amet perferendis tempora quisquam voluptatibus animi.</p>
+                    <button className="btn btn-secondary mt-5">Know more</button>
+                </div>
+
+                <div className=" lg:w-1/2">
+                    <img src="https://i.ibb.co/7bLPpk2/contact-removebg-preview.png" alt="" />
+                </div>
+
+            </div>
+
         </div>
     );
 };
