@@ -6,8 +6,6 @@ const About = () => {
             <Helmet>
                 <title>About us</title>
             </Helmet>
-
-
             <div className="flex gap-5 p-4 flex-col lg:flex-row">
 
                 <div className=" w-11/12 sm:h-1/2 lg:w-1/2">
